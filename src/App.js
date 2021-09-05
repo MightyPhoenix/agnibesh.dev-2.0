@@ -9,7 +9,6 @@ import {
 } from "react-icons/ai";
 import { FaSpotify } from "react-icons/fa";
 import Fade from "react-reveal/Fade";
-import Wobble from "react-reveal/Wobble";
 
 function App() {
   return (
