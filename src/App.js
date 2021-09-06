@@ -25,10 +25,10 @@ function App() {
         <div className="grid1">
           <div></div>
           <div className="wassup">
-            <Fade right duration={2000}>
+            <Fade duration={1000}>
               <h1>👋 Wassup?</h1>
             </Fade>
-            <Fade bottom duration={2000}>
+            <Fade delay={1000} duration={1000}>
               <div className="grid1-1">
                 <div className="border-right-white">
                   <ul>
