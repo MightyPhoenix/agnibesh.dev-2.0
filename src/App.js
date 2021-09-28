@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState, useEffect } from "react";
 import Halo from "./Halo";
 import { IconContext } from "react-icons";
 import {
@@ -11,8 +12,34 @@ import { FaSpotify } from "react-icons/fa";
 import Fade from "react-reveal/Fade";
 
 function App() {
+  const useAudio = (url) => {
+    const [audio] = useState(new Audio(url));
+    const [playing, setPlaying] = useState(true);
+
+    const toggle = () => setPlaying(!playing);
+
+    useEffect(() => {
+      audio.volume = 0.4;
+      playing ? audio.play() : audio.pause();
+    }, [playing]);
+
+    useEffect(() => {
+      audio.addEventListener("ended", () => setPlaying(false));
+      return () => {
+        audio.removeEventListener("ended", () => setPlaying(false));
+      };
+    }, []);
+
+    return [playing, toggle];
+  };
+
+  const [playing, toggle] = useAudio(
+    "https://www.soundboard.com/handler/DownLoadTrack.ashx?cliptitle=Never+Gonna+Give+You+Up-+Original&filename=mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3"
+  );
+
   return (
     <div className="App">
+      <button onClick={toggle}>{playing ? "Pause" : "Play"}</button>
       <Halo className="hero">
         <Fade bottom duration={3000}>
           <div>
@@ -25,9 +52,7 @@ function App() {
         <div className="grid1">
           <div></div>
           <div className="wassup">
-            <Fade right duration={2000}>
-              <h1>👋 Wassup?</h1>
-            </Fade>
+            <h1>👋 Wassup?</h1>
             <Fade bottom duration={2000}>
               <div className="grid1-1">
                 <div className="border-right-white">
@@ -81,7 +106,7 @@ function App() {
           </div>
           <div className="footer">
             <h3>
-              Made with  <span className="animate-beat">❤️</span>  by Agnibesh ©
+              Made with <span className="animate-beat">❤️</span> by Agnibesh ©
               2021
             </h3>
           </div>
