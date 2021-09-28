@@ -15,7 +15,7 @@ import Fade from "react-reveal/Fade";
 function App() {
   const useAudio = (url) => {
     const [audio] = useState(new Audio(url));
-    const [playing, setPlaying] = useState(true);
+    const [playing, setPlaying] = useState(false);
 
     const toggle = () => setPlaying(!playing);
 
@@ -37,6 +37,10 @@ function App() {
   const [playing, toggle] = useAudio(
     "https://www.soundboard.com/handler/DownLoadTrack.ashx?cliptitle=Never+Gonna+Give+You+Up-+Original&filename=mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3"
   );
+
+  useEffect(() => {
+    toggle();
+  }, []);
 
   return (
     <>
