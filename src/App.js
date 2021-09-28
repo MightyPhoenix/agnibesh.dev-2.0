@@ -25,6 +25,7 @@ function App() {
     }, [playing]);
 
     useEffect(() => {
+      audio.play();
       audio.addEventListener("ended", () => setPlaying(false));
       return () => {
         audio.removeEventListener("ended", () => setPlaying(false));
@@ -37,10 +38,6 @@ function App() {
   const [playing, toggle] = useAudio(
     "https://www.soundboard.com/handler/DownLoadTrack.ashx?cliptitle=Never+Gonna+Give+You+Up-+Original&filename=mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3"
   );
-
-  useEffect(() => {
-    toggle();
-  }, []);
 
   return (
     <>
