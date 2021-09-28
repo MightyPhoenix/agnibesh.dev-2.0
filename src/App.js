@@ -26,6 +26,7 @@ function App() {
 
     useEffect(() => {
       audio.play();
+      setPlaying(true);
       audio.addEventListener("ended", () => setPlaying(false));
       return () => {
         audio.removeEventListener("ended", () => setPlaying(false));
