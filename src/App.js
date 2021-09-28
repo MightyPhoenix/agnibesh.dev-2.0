@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Halo from "./Halo";
 import { IconContext } from "react-icons";
 import {
@@ -25,8 +25,6 @@ function App() {
     }, [playing]);
 
     useEffect(() => {
-      audio.play();
-      setPlaying(true);
       audio.addEventListener("ended", () => setPlaying(false));
       return () => {
         audio.removeEventListener("ended", () => setPlaying(false));
