@@ -95,11 +95,11 @@ li {
 }
 
 .spacer1 {
-  background-image: url("images/spacer.svg");
+  background-image: url("/public/spacer.svg");
 }
 
 .spacer2 {
-  background-image: url("images/space2.svg");
+  background-image: url("/public/space2.svg");
 }
 
 .grid1 {

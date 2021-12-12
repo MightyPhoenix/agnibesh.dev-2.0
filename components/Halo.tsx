@@ -1,8 +1,25 @@
-import { useState, useEffect, useRef } from "react";
+import {
+  useState,
+  useEffect,
+  useRef,
+  ReactChild,
+  ReactFragment,
+  ReactPortal,
+} from "react";
 import HALO from "vanta/dist/vanta.halo.min";
+import * as THREE from "three";
 
-export default function Holo(props) {
-  const [vantaEffect, setVantaEffect] = useState(0);
+export default function Halo(props: {
+  className: string | undefined;
+  children:
+    | boolean
+    | ReactChild
+    | ReactFragment
+    | ReactPortal
+    | null
+    | undefined;
+}) {
+  const [vantaEffect, setVantaEffect] = useState<any>(null);
   const myRef = useRef(null);
   useEffect(() => {
     if (window !== undefined) {
@@ -12,6 +29,7 @@ export default function Holo(props) {
       setVantaEffect(
         HALO({
           el: myRef.current,
+          THREE,
           mouseControls: true,
           touchControls: true,
           gyroControls: false,
