@@ -1,9 +1,11 @@
 import type { NextPage } from "next";
 import React, { useState, useEffect, useRef } from "react";
 // import Head from "next/head";
-import Script from "next/Script";
+// import Script from "next/Script";
 // import Image from "next/image";
-// import Halo from "../components/Halo";
+import Halo from "../components/Halo";
+import Net from "../components/Net";
+import Dots from "../components/Dots";
 import { IconContext } from "react-icons";
 import {
   AiFillGithub,
@@ -14,51 +16,15 @@ import {
 import { FaPlay, FaPause } from "react-icons/fa";
 import { FaSpotify } from "react-icons/fa";
 import Fade from "react-reveal/Fade";
-import HALO from "vanta/dist/vanta.halo.min";
-import * as THREE from "three";
 
 const Home: NextPage = () => {
-  const [vantaEffect, setVantaEffect] = useState<any>(null);
-  const myRef = useRef(null);
-  useEffect(() => {
-    if (window !== undefined && THREE.LinearFilter !== undefined) {
-      window.scrollTo(0, 1);
-      if (!vantaEffect) {
-        setVantaEffect(
-          HALO({
-            el: myRef.current,
-            THREE,
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.0,
-            minWidth: 200.0,
-            amplitudeFactor: 0,
-            xOffset: 0.22,
-            size: 1.5,
-            backgroundColor: 0x0,
-            baseColor: 0x0,
-          })
-        );
-      }
-    }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy();
-    };
-  }, [vantaEffect]);
   return (
     <div>
       {/* <button className="theButton" onClick={toggle}>
         {playing ? <FaPause /> : <FaPlay />}
       </button> */}
-      <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
-        integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ=="
-        crossOrigin="anonymous"
-        referrerPolicy="no-referrer"
-      ></Script>
       <div className="App">
-        <section className="hero" ref={myRef}>
+        <Net className="hero">
           <Fade bottom duration={3000}>
             <div>
               <h1>Agnibesh Mukherjee</h1>
@@ -68,8 +34,8 @@ const Home: NextPage = () => {
               </p>
             </div>
           </Fade>
-        </section>
-        <section className="spacer spacer1">
+        </Net>
+        <Net className="spacer spacer1">
           <div className="grid1">
             <div></div>
             <div className="wassup">
@@ -110,8 +76,8 @@ const Home: NextPage = () => {
               </Fade>
             </div>
           </div>
-        </section>
-        <section className="spacer spacer2 d-flex-vertical-between">
+        </Net>
+        <Net className="spacer spacer2 d-flex-vertical-between">
           <div className="grid2">
             <div className="wassup2">
               <Fade top>
@@ -161,8 +127,8 @@ const Home: NextPage = () => {
                 </IconContext.Provider>
                 <div className="thanks">
                   <h3>
-                    Special thanks to Rick Astley for his song "Never gonna give
-                    you up", VantaJs for the Halo Effect,
+                    Special thanks to Rick Astley for his song &quot;Never gonna
+                    {/* give you up&quot;, VantaJs for the Halo Effect, */}
                     <br /> React-icons as always to the rescue, and haikei.app
                     for wonderful curvy SVGs.
                   </h3>
@@ -179,7 +145,7 @@ const Home: NextPage = () => {
               </h3>
             </div>
           </div>
-        </section>
+        </Net>
       </div>
     </div>
   );
@@ -195,5 +161,7 @@ const Emoji = (props: { label?: string | undefined; symbol: string }) => (
     {props.symbol}
   </span>
 );
+
+const arr = ["average TC39 aspirant","wannabe js ninja"];
 
 export default Home;
