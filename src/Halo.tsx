@@ -1,8 +1,18 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  ReactChild,
+  ReactFragment,
+  ReactPortal,
+} from "react";
 import HALO from "vanta/dist/vanta.halo.min";
 
-export default function Holo(props) {
-  const [vantaEffect, setVantaEffect] = useState(0);
+export default function Halo(props: {
+  className: string;
+  children: ReactChild;
+}) {
+  const [vantaEffect, setVantaEffect] = useState<any>(null);
   const myRef = useRef(null);
   useEffect(() => {
     if (window !== undefined) {

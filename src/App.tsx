@@ -13,11 +13,11 @@ import { FaSpotify } from "react-icons/fa";
 import Fade from "react-reveal/Fade";
 
 function App() {
-  const useAudio = (url) => {
-    const [audio] = useState(new Audio(url));
-    const [playing, setPlaying] = useState(false);
+  const useAudio = (url: string) => {
+    const [audio] = useState<HTMLAudioElement>(new Audio(url));
+    const [playing, setPlaying] = useState<Boolean>(false);
 
-    const toggle = () => setPlaying(!playing);
+    const toggle: any = () => setPlaying(!playing);
 
     useEffect(() => {
       audio.volume = 0.4;
@@ -174,7 +174,7 @@ function App() {
   );
 }
 
-const Emoji = (props) => (
+const Emoji = (props: { label?: string | undefined; symbol: string }) => (
   <span
     className="emoji"
     role="img"
