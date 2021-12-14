@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import Halo from "./Halo";
+import Cells from "./Cells";
 import { IconContext } from "react-icons";
 import {
   AiFillGithub,
@@ -44,7 +45,7 @@ function App() {
         {playing ? <FaPause /> : <FaPlay />}
       </button>
       <div className="App">
-        <Halo className="hero">
+        <Cells className="hero">
           <Fade bottom duration={3000}>
             <div>
               <h1>Agnibesh Mukherjee</h1>
@@ -54,7 +55,7 @@ function App() {
               </p>
             </div>
           </Fade>
-        </Halo>
+        </Cells>
         <section className="spacer spacer1">
           <div className="grid1">
             <div></div>
