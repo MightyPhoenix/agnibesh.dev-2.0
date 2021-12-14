@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import HALO from "vanta/dist/vanta.halo.min";
 
 export default function Holo(props) {

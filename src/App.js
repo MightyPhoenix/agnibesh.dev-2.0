@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Halo from "./Halo";
 import { IconContext } from "react-icons";
 import {
@@ -59,7 +59,10 @@ function App() {
           <div className="grid1">
             <div></div>
             <div className="wassup">
-              <h1>👋 Wassup?</h1>
+              <h1>
+                <Emoji symbol={"👋"} />
+                Wassup?
+              </h1>
               <Fade bottom duration={2000}>
                 <div className="grid1-1">
                   <div className="border-right-white">
@@ -110,35 +113,35 @@ function App() {
                   <div className="grid2-1">
                     <a
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       href="https://github.com/MightyPhoenix"
                     >
                       <AiFillGithub />
                     </a>
                     <a
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       href="https://www.instagram.com/hsebinga/"
                     >
                       <AiOutlineInstagram />
                     </a>
                     <a
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       href="https://open.spotify.com/user/31vhl5d4sdpth7xim4fbyypclmdi"
                     >
                       <FaSpotify />
                     </a>
                     <a
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       href="https://www.linkedin.com/in/mightyphoenix7/"
                     >
                       <AiFillLinkedin />
                     </a>
                     <a
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       href="https://twitter.com/hsebinga"
                     >
                       <AiOutlineTwitter />
