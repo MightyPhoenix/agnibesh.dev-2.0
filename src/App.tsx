@@ -186,4 +186,6 @@ const Emoji = (props: { label?: string | undefined; symbol: string }) => (
   </span>
 );
 
+const arr: string[] = ["average TC39 aspirant", "wannabe js ninja", "don't judge by favicon"];
+
 export default App;
