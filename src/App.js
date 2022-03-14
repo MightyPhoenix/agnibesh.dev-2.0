@@ -49,7 +49,7 @@ function App() {
             <div>
               <h1>Agnibesh Mukherjee</h1>
               <p>
-                average TC39 aspirant <Emoji symbol={"🥷"} />
+                got tired of type errors <Emoji symbol={"🥷"} />
                 <Emoji symbol={"💖"} />
               </p>
             </div>
